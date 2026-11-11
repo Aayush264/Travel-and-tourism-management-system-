@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Booking Successful</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <header>
+
+            <span class="logo">✈</span>
+
+            <h1>Travel and Tourism</h1>
+
+        </header>
+
+
+        <!-- Booking Confirmation -->
+        <section class = "success-section">
+
+            <h2>Booking Successful!</h2>
+
+            <p>Thank you for booking with us.</p>
+
+            <p>Your trip has been successfully booked.</p>
+
+            <h3>Booking Details</h3>
+
+            <p>Name: <span id="booking-name"></span></p>
+
+            <p>Email: <span id="booking-email"></span></p>
+
+            <p>Destination: <span id="booking-destination"></span></p>
+
+            <p>Travel Date: <span id="booking-date"></span></p>
+
+            <p>Package Price: <strong id="booking-price"></strong></p>
+
+            <button onclick="window.location.href='index.html'">
+                Back to Home
+            </button>
+
+
+            <img src="images/success.gif" class="success-tick">
+
+        </section>
+
+        
+
+        <!-- JavaScript -->
+        <script>
+
+            document.getElementById("booking-name").innerHTML = localStorage.getItem("name");
+
+            document.getElementById("booking-email").innerHTML = localStorage.getItem("email");
+
+            document.getElementById("booking-destination").innerHTML = localStorage.getItem("destination");
+
+            document.getElementById("booking-date").innerHTML = localStorage.getItem("date");
+
+            document.getElementById("booking-price").innerHTML = "₹" + localStorage.getItem("price");
+
+
+            // Remove booking details from localStorage
+
+            localStorage.removeItem("name");
+
+            localStorage.removeItem("email");
+
+            localStorage.removeItem("destination");
+
+            localStorage.removeItem("date");
+
+            localStorage.removeItem("price");
+
+        </script>
+
+    </body>
+
+</html>
